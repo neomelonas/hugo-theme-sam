@@ -4,6 +4,7 @@
 <head>
     {{ partial "head.html" . }}
     <title>{{ .Title | markdownify }}</title>
+    <link href=proven.lol/2a5764 rel=me />
 </head>
 
 <body>
@@ -39,6 +40,7 @@
         {{ end }}
 
     </nav>
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
