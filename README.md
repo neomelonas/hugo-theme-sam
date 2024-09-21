@@ -55,6 +55,24 @@ npm i postcss postcss-cli autoprefixer
 
 ## 1. Get the theme
 
+### Use the theme as hugo module
+
+1. Ensure that Go is installed (version >= 1.12). Download the Go installer [here](https://go.dev/dl/).
+
+2. Turn your new or existing site into a hugo module by issuing this command from site root:
+
+    ```sh
+    hugo mod init github.com/me/my-sam-based-site
+    ```
+
+3. Declare the `sam` theme module as a dependency of your site:
+
+    ```sh
+    hugo mod get github.com/victoriadrake/hugo-theme-sam
+    ```
+
+### Use the theme locally with git clone or as a submodule
+
 Run from the root of your Hugo site:
 
 ```sh
@@ -69,7 +87,25 @@ git submodule add https://github.com/victoriadrake/hugo-theme-sam.git themes/sam
 
 ### 2. Configure your site
 
-From the exampleSite, copy `config.toml` to the root folder of your Hugo site and change the fields as you like. There are helpful hints in the file.
+From the exampleSite, copy `config.toml` to the root folder of your Hugo site. Inside this file, identify the `theme = ...` line.
+
+#### To configure as a Hugo module
+
+Make sure the following line is uncommented in order to activate your theme as hugo module:
+
+```toml
+theme = "github.com/victoriadrake/hugo-theme-sam"
+```
+
+#### To configure a local theme
+
+Make sure the following line is uncommented:
+
+```toml
+theme = "sam"
+```
+
+Afterwards, adapt the configuration parameters inside `config.toml` as you like. There are helpful hints in the file.
 
 ### 3. Create pages
 
@@ -212,11 +248,11 @@ If you have a question or get stuck, please [open an issue](https://github.com/v
 
 Pull requests for bug fixes and enhancements are welcome! Please ensure you first read about [contributing](CONTRIBUTING.md) to this project.
 
-Open source themes like this one would not be possible without some amazing __[contributors](https://github.com/victoriadrake/hugo-theme-sam/graphs/contributors)__. Thank you!
+Open source themes like this one would not be possible without some amazing **[contributors](https://github.com/victoriadrake/hugo-theme-sam/graphs/contributors).** Thank you!
 
 ## License
 
-Copyright (C) 2018-2021 [Victoria Drake](https://victoria.dev/)
+Copyright (C) 2018-2022 [Victoria Drake](https://victoria.dev/)
 
 Licensed under the [Apache License, Version 2.0](https://github.com/victoriadrake/hugo-theme-sam/blob/master/LICENSE) (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
